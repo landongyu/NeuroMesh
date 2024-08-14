@@ -1,12 +1,12 @@
-from queue import PriorityQueue
 def solution(source, target):
     if len(target) == 0:
         return 0
 
     source_set = set(source)
     target_set = set(target)
-    if source_set != target_set:
-        return -1
+    for ch in target_set:
+        if ch not in source_set:
+            return -1
 
     ans = 1
     source_index = 0
